@@ -1,0 +1,119 @@
+
+<!DOCTYPE html><html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شبِ برات – 100 رکعت نماز</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jameel+Noori+Nastaleeq&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Jameel Noori Nastaleeq', serif;
+      background:#f0f8ff;
+      margin:0;
+      padding:20px;
+      direction: rtl;
+      color:#333;
+    }
+    .container {
+      max-width:800px;
+      margin:auto;
+      background:#fff;
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    }
+    h1 {
+      text-align:center;
+      color:#1a237e;
+      font-size:32px;
+      margin-bottom:10px;
+    }
+    h2 {
+      text-align:center;
+      color:#3949ab;
+      font-size:22px;
+      margin-bottom:20px;
+    }
+    p {
+      font-size:18px;
+      line-height:2;
+      margin-bottom:15px;
+    }
+    .counter {
+      text-align:center;
+      font-size:20px;
+      margin:25px 0;
+      font-weight:bold;
+    }
+    .buttons {
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:12px;
+      margin-bottom:20px;
+    }
+    button {
+      padding:12px;
+      font-size:16px;
+      cursor:pointer;
+      border-radius:8px;
+      border:1px solid #3949ab;
+      background:#e8eaf6;
+      color:#1a237e;
+      transition:0.3s;
+    }
+    button:hover {
+      background:#c5cae9;
+    }
+    button.active {
+      background:#3949ab;
+      color:#fff;
+      border-color:#3949ab;
+    }
+    .footer {
+      text-align:center;
+      margin-top:30px;
+      font-size:16px;
+      color:#555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>شبِ برات</h1>
+    <h2>100 رکعت نفل نماز (ہر 2 رکعت ایک سلام)</h2><p><strong>نیت:</strong><br>
+یا اللہ! میں شبِ برات کی نفل نماز تیری رضا کے لیے ادا کرتا/کرتی ہوں۔
+میرے گناہوں کو معاف فرما، رزق، عمر اور ایمان میں برکت عطا فرما۔ آمین۔</p>
+
+<p><strong>نماز پڑھنے کا طریقہ:</strong><br>
+ہر رکعت میں سورۃ الفاتحہ کے بعد 10 مرتبہ سورۃ الاخلاص پڑھیں۔
+ہر دو رکعت کے بعد سلام پھیریں۔</p>
+
+<div class="counter">
+  مکمل سلام: <span id="count">0</span> / 50
+</div>
+
+<div class="buttons" id="buttons"></div>
+
+<div class="footer">
+  اللہ تعالیٰ آپ کی عبادت قبول فرمائے 🤲
+</div>
+
+  </div>  <script>
+    const buttonsDiv = document.getElementById('buttons');
+    const countSpan = document.getElementById('count');
+    let count = 0;
+
+    for (let i = 1; i <= 50; i++) {
+      const btn = document.createElement('button');
+      btn.innerText = i + ' سلام';
+      btn.onclick = () => {
+        if (!btn.classList.contains('active')) {
+          btn.classList.add('active');
+          count++;
+          countSpan.innerText = count;
+        }
+      };
+      buttonsDiv.appendChild(btn);
+    }
+  </script></body>
+</html>
