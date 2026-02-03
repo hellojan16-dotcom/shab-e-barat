@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شبِ برات – 100 رکعت نماز</title>
+  <style>
+    body {
+      font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+      background:#f6f6f6;
+      margin:0;
+      padding:20px;
+      direction: rtl;
+    }
+    .container {
+      max-width:800px;
+      margin:auto;
+      background:#fff;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align:center;
+    }
+    p {
+      font-size:16px;
+      line-height:1.9;
+    }
+    .counter {
+      text-align:center;
+      font-size:18px;
+      margin:20px 0;
+    }
+    .buttons {
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:10px;
+    }
+    button {
+      padding:10px;
+      font-size:14px;
+      cursor:pointer;
+      border-radius:6px;
+      border:1px solid #ccc;
+      background:#fafafa;
+    }
+    button.active {
+      background:#4caf50;
+      color:#fff;
+      border-color:#4caf50;
+    }
+    .footer {
+      text-align:center;
+      margin-top:25px;
+      font-size:14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>شبِ برات</h1>
+    <h2>100 رکعت نفل نماز (ہر 2 رکعت ایک سلام)</h2>
+
+    <p><strong>نیت:</strong><br>
+    یا اللہ! میں شبِ برات کی نفل نماز تیری رضا کے لیے ادا کرتا/کرتی ہوں۔
+    میرے گناہوں کو معاف فرما، رزق، عمر اور ایمان میں برکت عطا فرما۔ آمین۔</p>
+
+    <p><strong>نماز پڑھنے کا طریقہ:</strong><br>
+    ہر رکعت میں سورۃ الفاتحہ کے بعد 10 مرتبہ سورۃ الاخلاص پڑھیں۔
+    ہر دو رکعت کے بعد سلام پھیریں۔</p>
+
+    <div class="counter">
+      مکمل سلام: <span id="count">0</span> / 50
+    </div>
+
+    <div class="buttons" id="buttons"></div>
+
+    <div class="footer">
+      اللہ تعالیٰ آپ کی عبادت قبول فرمائے 🤲
+    </div>
+  </div>
+
+  <script>
+    const buttonsDiv = document.getElementById('buttons');
+    const countSpan = document.getElementById('count');
+    let count = 0;
+
+    for (let i = 1; i <= 50; i++) {
+      const btn = document.createElement('button');
+      btn.innerText = i + ' سلام';
+      btn.onclick = () => {
+        if (!btn.classList.contains('active')) {
+          btn.classList.add('active');
+          count++;
+          countSpan.innerText = count;
+        }
+      };
+      buttonsDiv.appendChild(btn);
+    }
+  </script>
+</body>
+</html>
